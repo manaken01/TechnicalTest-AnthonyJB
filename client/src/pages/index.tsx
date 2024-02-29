@@ -25,7 +25,7 @@ export default function Home() {
 
       setDogBreeds(response.data);
     } catch (error) {
-      console.error('Error al obtener las razas de perros:');
+      console.error('Error getting the dogs:',error);
     }
   };
 
@@ -40,7 +40,7 @@ export default function Home() {
       console.log(response.data)
       setDogBreeds(response.data);
     } catch (error) {
-      console.error('Error al obtener las razas de perros:');
+      console.error('error getting the dogs:',error);
     }
    
   };
@@ -77,7 +77,7 @@ export default function Home() {
         </Stack>
 
         
-        <ImageList sx={{ width: 500, height: 450, marginTop: '0.5%' }} variant="woven" cols={3} gap={8}>
+        <ImageList sx={{ width: 900, height: 450, marginTop: '0.5%' }} variant="woven" cols={3} gap={8}>
           {dogBreeds.map((item) => (
             <ImageListItem key={item.url}>
               <img
