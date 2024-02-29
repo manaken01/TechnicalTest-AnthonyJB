@@ -71,7 +71,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '10%'
+        marginTop: '5%'
       }}>
 
         <Stack direction="row" spacing={2} sx={{ marginTop: '8%', marginBottom: '4%' }}>
