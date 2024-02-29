@@ -26,7 +26,6 @@ export default function Home() {
           'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs', 
         },
       });
-
       setDogBreeds(response.data);
     } catch (error) {
       console.error('Error getting the dogs:',error);
@@ -34,14 +33,12 @@ export default function Home() {
   };
 
   const fetchDogBreedsById = async () => {
-    console.log(selectedDog)
     try {
       const response = await axios.get(`https://api.thedogapi.com/v1/images/search?limit=10&breed_ids=${selectedDog}`, {
         headers: {
           'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs',
         },
       });
-      console.log(response.data)
       setDogBreeds(response.data);
     } catch (error) {
       console.error('error getting the dogs:',error);
