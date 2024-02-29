@@ -4,10 +4,16 @@ interface DogBreed {
     url: string;
   }
   
-  interface DogImageListProps {
+interface DogImageListProps {
     dogBreeds: DogBreed[];
-  }
+}
 
+/**
+ * 
+ * @param dogBreeds 
+ * create a imageList
+ * @returns imageList
+ */
 function DogImageList({ dogBreeds }: DogImageListProps) {
     return (
         <ImageList sx={{ width: 900, height: 450, marginTop: '0.5%', justifyContent: 'center', marginBottom:'3%' }} cols={3} gap={10}>

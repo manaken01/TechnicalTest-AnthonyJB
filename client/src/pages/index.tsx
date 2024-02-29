@@ -10,6 +10,10 @@ import Stack from '@mui/material/Stack';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 
+/**
+ * 
+ * @returns the main page
+ */
 export default function Home() {
 
   const [dogBreeds, setDogBreeds] = useState<any[]>([])
