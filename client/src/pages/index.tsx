@@ -19,7 +19,7 @@ export default function Home() {
     try {
       const response = await axios.get('https://api.thedogapi.com/v1/images/search?limit=10', {
         headers: {
-          'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs', // Reemplaza con tu clave de API
+          'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs', 
         },
       });
 
@@ -34,7 +34,7 @@ export default function Home() {
     try {
       const response = await axios.get(`https://api.thedogapi.com/v1/images/search?limit=10&breed_ids=${selectedDog}`, {
         headers: {
-          'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs', // Reemplaza con tu clave de API
+          'x-api-key': 'live_p5CC4himAdbSUr8La8wY1VHawKyQxIZ5s1GJN9StVWRDpBqsUkrO8OyYeBfZruxs',
         },
       });
       console.log(response.data)
