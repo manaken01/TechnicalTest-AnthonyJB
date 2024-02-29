@@ -3,7 +3,7 @@ import axios from 'axios';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { ImageList, ImageListItem } from '@mui/material';
+import DogImageList from '@/components/dogImageList';
 import PetsIcon from '@mui/icons-material/Pets';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -66,8 +66,8 @@ export default function Home() {
         my: 4,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: '10%'
       }}>
 
         <Stack direction="row" spacing={2} sx={{ marginTop: '8%', marginBottom: '4%' }}>
@@ -75,25 +75,10 @@ export default function Home() {
           <Typography variant='h2' sx={{color: '#FD9B10'}}>DOGS</Typography>
           <Typography variant='h2' sx={{color: 'black'}}>PAGE</Typography>
         </Stack>
-
         
-        <ImageList sx={{ width: 900, height: 450, marginTop: '0.5%' }} variant="woven" cols={3} gap={8}>
-          {dogBreeds.map((item) => (
-            <ImageListItem key={item.url}>
-              <img
-                srcSet={`${item.url}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.url}?w=161&fit=crop&auto=format`}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
- 
-      
-        <Stack direction="row" spacing={45} sx={{ marginTop: '4%', marginBottom: '1%' }}>
-          <Button onClick={handleRandomDogsClick} variant="contained" style={{ backgroundColor: 'black', color: 'white' }}>
-            Random dogs
-          </Button>
+        <DogImageList dogBreeds={dogBreeds} />
+
+        <Stack direction="row" spacing={3} sx={{marginBottom:'5%'}} >
           <Select 
           value={selectedDog} 
           onChange={(e, newValue) => setSelectedDog(newValue)}
@@ -107,10 +92,13 @@ export default function Home() {
             <Option value="7">Alapaha Blue Blood Bulldog</Option>
             <Option value="4">Airedale Terrier</Option>
           </Select>
+          <Button onClick={fetchDogBreedsById} variant="contained" style={{ backgroundColor: 'black', color: 'white'}}>
+            Search
+          </Button>
+          <Button onClick={handleRandomDogsClick} variant="contained" style={{ backgroundColor: 'black', color: 'white'}}>
+            Random dogs
+          </Button>
         </Stack>
-        <Button onClick={fetchDogBreedsById} variant="contained" style={{ backgroundColor: 'black', color: 'white',marginBottom: '4%' }}>
-          Search
-        </Button>
       </Box>
     </Container>
 
